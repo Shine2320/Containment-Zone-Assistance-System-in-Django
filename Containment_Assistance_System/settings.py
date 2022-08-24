@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+PHONENUMBER_DEFAULT_REGION="IN"
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main_app',
     'crispy_forms',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
@@ -74,7 +75,7 @@ WSGI_APPLICATION = 'Containment_Assistance_System.wsgi.application'
 AUTH_USER_MODEL = "main_app.User"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
