@@ -11,7 +11,8 @@ class NewCustomerForm(UserCreationForm):
 
     def save(self, commit=True):
         user = super(NewCustomerForm, self).save(commit=False)
-        user.user_type = "customer"
+        user.user_type = User.CUSTOMER
+        user.status = User.PENDING
         if commit:
             user.save()
         return user
@@ -23,8 +24,8 @@ class NewStaffForm(UserCreationForm):
 
     def save(self,commit=True):
         user = super(NewStaffForm, self).save(commit=False)
-        user.user_type = "staff"
-        user.status = "pending"
+        user.user_type = User.STAFF
+        user.status = User.PENDING
         if commit:
             user.save()
         return user
@@ -32,11 +33,11 @@ class NewStaffForm(UserCreationForm):
 class NewProviderForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ("username", "password1", "password2", 'provider_name', 'email', 'phone', 'place', 'condition')
+        fields = ("username", "password1", "password2", 'provider_name', 'email', 'phone', 'place')
     def save(self,commit=True):
         user = super(NewProviderForm, self).save(commit=False)
-        user.user_type = "provider"
-        user.status = "pending"
+        user.user_type = User.PROVIDER
+        user.status = User.PENDING
         if commit:
             user.save()
         return user

@@ -1,0 +1,14 @@
+<html>
+    <head>
+    <title>{%block title%}{%endblock%}</title>
+
+<a href="/">Home</a>
+<a href="logout">logout</a> 
+</head>
+
+
+    <body>
+        {%block content%}
+        {%endblock%}
+    </body>
+</html>

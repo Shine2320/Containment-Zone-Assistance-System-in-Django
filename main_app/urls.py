@@ -1,5 +1,7 @@
 from django.contrib import admin
 from django.urls import path,include
+
+
 from .views import *
 urlpatterns = [
     # path('admin/', admin.site.urls),
@@ -7,4 +9,6 @@ urlpatterns = [
     path('customersignup',customer_signup,name='customersignup'),
     path('staffsignup',staff_signup,name='staffsignup'),
     path('providersignup',provider_signup,name='providersignup'),
+    path("login",login_request, name="login"),
+    path("provider/",include("provider.urls"), name="provider"),
 ]
